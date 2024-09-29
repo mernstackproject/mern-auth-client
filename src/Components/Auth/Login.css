@@ -1,0 +1,143 @@
+/* Login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 70vh;   */
+  background-color: #f0f2f5;
+}
+
+.login-box {
+  background-color: white;
+  padding: 40px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.login-form .input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #3498db;
+}
+
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.register-link {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+/* here google oath design */
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.separator span {
+  flex-grow: 1;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  position: relative;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+.google-login {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* .login-btn:disabled {
+  background-color: #888888; 
+  cursor: not-allowed;
+} */
+
+
+.login-btn:disabled {
+  background-color: #888888; /* Gray out when disabled */
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hide text when spinner is active */
+.login-btn.loading .btn-text {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-header {
+  background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8)),
+    url("https://images.unsplash.com/photo-1512820790803-83ca734da794?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTY3MDAyMzgxMA&ixlib=rb-1.2.1&q=80&w=1200");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-title {
+  cursor: pointer;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: 300;
+  color: #ecf0f1;
+}
+
+/* Profile Section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid #fff; /* Adds a border to make the image stand out */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.profile-name {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  width: 150px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+  background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8))
+}
+
+
+
+.books-section {
+  margin-top: 50px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.books-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.book-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2c3e50;
+}
+
+.auth-section {
+  margin-top: 60px;
+}
+
+.auth-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #2980b9;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-alt {
+  background-color: #27ae60;
+}
+
+.btn:hover {
+  background-color: #3498db;
+}
+
+.btn-alt:hover {
+  background-color: #2ecc71;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 2.5rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .books-grid {
+    gap: 20px;
+  }
+
+  .book-card {
+    width: 180px;
+  }
+}
