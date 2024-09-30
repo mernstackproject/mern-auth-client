@@ -12,6 +12,7 @@ const BookingDetails = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [bookData, setBookData] = useState(null);
+  const [disable, setDisable] = useState(false)
   let singleBookingData = booksData.find((book) => book.id === parseInt(id));
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const BookingDetails = () => {
 
   const handlePurchase = async () => {
     try {
+      setDisable(true)
       const { data:{order} } = await axios.post(`${BaseURL}/checkout`, {
         amount: singleBookingData.price,  
       });
@@ -38,8 +40,8 @@ const BookingDetails = () => {
          callback_url: `${BaseURL}/paymentverification`,
          prefill: {
              name: "shyam",
-             email: "guptashyam1096@gmail.com",
-             contact: "8094404704"
+             email: "hello@gmail.com",
+             contact: "99999999999"
          },
          notes: {
             "address": "Razorpay Corporate Office"
@@ -53,6 +55,10 @@ const BookingDetails = () => {
     } catch (error) {
       console.error(error);
       toast.error('Error occurred while processing payment');
+    }finally{
+      setTimeout(()=>{
+         setDisable(false)
+      },3000)
     }
   };
 
@@ -85,7 +91,8 @@ const BookingDetails = () => {
               value="Purchase now"
               type="submit"
               onClick={handlePurchase} 
-            >Purchase</button>
+              
+            >{disable  ? "...":"PURCHASE NOW"}</button>
           </div>
         </div>
       )}

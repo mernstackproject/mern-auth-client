@@ -1,10 +1,10 @@
 import React from "react";
 import "../pages/Home/Home.css";
 import { useNavigate } from "react-router-dom";
-import FetchService from "../Auth/services/FetchService";
+import { useGetUsersQuery } from "../Features/apislice";
 import Image from "../Image/Image";
 const Navbar = () => {
-  const { data: userData } = FetchService("/found-user");
+  const {isLoading, data:userData, isError} = useGetUsersQuery()
   const navigate = useNavigate();
   return (
     <header className="home-header">
