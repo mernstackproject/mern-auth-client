@@ -8,103 +8,6 @@ body {
   text-align: center;
   padding: 20px;
 }
-
-.home-header {
-  background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8)),
-    url("https://images.unsplash.com/photo-1512820790803-83ca734da794?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTY3MDAyMzgxMA&ixlib=rb-1.2.1&q=80&w=1200");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 25px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.home-title {
-  cursor: pointer;
-  font-size: 3.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.home-subtitle {
-  font-size: 1.5rem;
-  margin-top: 20px;
-  font-weight: 300;
-  color: #ecf0f1;
-}
-
-/* Profile Section */
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.profile-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.profile-image {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-  border: 2px solid #fff; /* Adds a border to make the image stand out */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
-}
-
-.profile-name {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  position: relative;
-}
-
-.profile-dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 50px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1;
-  width: 150px;
-}
-
-.dropdown-content a {
-  color: #333;
-  padding: 10px;
-  text-decoration: none;
-  display: block;
-  font-size: 1rem;
-}
-
-.dropdown-content a:hover {
-  background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8))
-}
-
 @media (min-width: 1024px) {
   .home-title {
     font-size: 3.5rem;
@@ -201,6 +104,103 @@ body {
     justify-content: center;
   }
 }
+.home-header {
+  background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8)),
+    url("https://images.unsplash.com/photo-1512820790803-83ca734da794?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTY3MDAyMzgxMA&ixlib=rb-1.2.1&q=80&w=1200");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-title {
+  cursor: pointer;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: 300;
+  color: #ecf0f1;
+}
+
+/* Profile Section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid #fff; /* Adds a border to make the image stand out */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.profile-name {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  width: 150px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+  background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8))
+}
+
+
 
 .books-section {
   margin-top: 50px;
