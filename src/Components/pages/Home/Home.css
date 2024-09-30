@@ -105,7 +105,102 @@ body {
   background: linear-gradient(rgba(22, 16, 80, 0.8), rgba(10, 100, 80, 0.8))
 }
 
+@media (min-width: 1024px) {
+  .home-title {
+    font-size: 3.5rem;
+  }
 
+  .home-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .profile-image {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 1024px) {
+  .home-header {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start;
+  }
+
+  .home-title {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .home-subtitle {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .header-right {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+
+/* For small screens (phones) */
+@media (max-width: 768px) {
+  .home-header {
+    padding: 15px;
+  }
+
+  .home-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .home-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profile-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* For extra small screens (very small phones) */
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .profile-name {
+    font-size: 0.85rem;
+  }
+
+  .header-right {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
 
 .books-section {
   margin-top: 50px;
