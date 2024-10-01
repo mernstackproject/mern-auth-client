@@ -5,11 +5,7 @@ import Image from "../../Image/Image";
 import Navbar from "../Navbar";
 const Home = () => {
   const navigate = useNavigate();
-  const isAuthenticated = localStorage.getItem("auth") !== null;
-  const handleLogout = () => {
-    localStorage.removeItem("auth");
-    navigate("/login");
-  };
+
   return (
     <>
       <Navbar />
@@ -62,18 +58,7 @@ const Home = () => {
         </section>
         <section className="auth-section">
           <h3 className="auth-text">Join Us Now</h3>
-          <div className="auth-buttons">
-            <Link onClick={handleLogout} to="/login" className="btn">
-              {isAuthenticated ? "Logout" : "Login"}
-            </Link>
-            {isAuthenticated ? (
-              ""
-            ) : (
-              <Link to="/register" className="btn btn-alt">
-                Register
-              </Link>
-            )}
-          </div>
+         
         </section>
       </div>
     </>

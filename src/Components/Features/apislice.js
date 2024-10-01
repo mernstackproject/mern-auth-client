@@ -8,11 +8,14 @@ export const apiSlice = createApi({
   tagTypes: ["user"],
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => "/found-user",
-      providesTags: (result) =>
-        result
-         
+      query: () => ({
+        url: "/found-user",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("auth")}`, // Ensure `token` is defined
+        },
+      }),
     }),
   }),
 });
-export const {useGetUsersQuery} = apiSlice;
+export const { useGetUsersQuery } = apiSlice;

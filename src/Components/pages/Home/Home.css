@@ -160,7 +160,14 @@ body {
   border: 2px solid #fff; /* Adds a border to make the image stand out */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
 }
+.logout-button{
+  padding:5px 20px;
+  background-color: #2980b9;
+  color:wheat;
+  font-size: 18px ;
+  border-radius: 10px;
 
+}
 .profile-name {
   background: none;
   border: none;

@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../pages/Home/Home.css";
 import { useNavigate } from "react-router-dom";
-import { useGetUsersQuery } from "../Features/apislice";
+import FetchService from "../Auth/services/FetchService";
 import Image from "../Image/Image";
+
 const Navbar = () => {
-  const {isLoading, data:userData, isError} = useGetUsersQuery()
+  const { data: userData } = FetchService("/found-user");
+  const isAuthenticated = localStorage.getItem("auth") !== null;
   const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    if(! localStorage.removeItem("auth") ||  localStorage.removeItem("auth") === undefined ||  localStorage.removeItem("auth") === null){
+      navigate("/login")
+    }
+    navigate("/login");
+  };
+    
   return (
     <header className="home-header">
       <div className="header-content">
@@ -20,17 +30,23 @@ const Navbar = () => {
 
         <div className="header-right">
           <div className="profile-container">
-            <Image
-              src={userData?.data?.userRecord?.image}
+            <img
+              src={userData?.data?.userRecord?.image && userData?.data?.userRecord?.image}
               alt="Profile"
               className="profile-image"
             />
 
             <div className="profile-dropdown">
               <button className="profile-name">
-                {userData?.data?.userRecord.email} ▼{" "}
-                {/* Adjusted based on userData structure */}
+                {userData?.data?.userRecord.email} ▼
               </button>
+              <div className="dropdown-menu">
+                 
+                  <button onClick={handleLogout} className="logout-button">
+                 {isAuthenticated ? "Logout":"Login"}   
+                  </button>
+                
+              </div>
             </div>
           </div>
         </div>

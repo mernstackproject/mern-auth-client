@@ -1,4 +1,4 @@
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleOAuthProvider, GoogleLogin} from '@react-oauth/google';
 import { onError } from './services/OnchangeService';
 import React from 'react';
 import { googleAuth } from './services/Api';

@@ -47,7 +47,7 @@ const Register = () => {
   }
   return (
     <>
-    <Navbar/>
+    <Navbar />
     <div className="register-container">
       <div className="register-box">
         <h2 className="register-title">Create Your Account</h2>

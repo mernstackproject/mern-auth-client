@@ -2,7 +2,6 @@ import { emailRegex, passwordRegex } from "./Regex";
 
 
 export const onError = () => {};
-// {here register handleChange} //
 export const handleChange = (e, formData, setFormData) => {
   let allFromData = { ...formData };
   const { name, value } = e.target;

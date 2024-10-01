@@ -5,11 +5,13 @@ import './Books.css';
 import Navbar from '../Navbar';
 import Button from '../../Button/Button';
 import Image from '../../Image/Image';
+import useAuth from '../utils/useAuth';
 const Books = () => {
-   
+  console.log(localStorage.getItem("auth"))
+    useAuth()
   return (
     <>
-    <Navbar/>
+    <Navbar />
     <div className="books-container">
       <h1 className="title">Explore Our Collection</h1>
       <div className="books-list">
