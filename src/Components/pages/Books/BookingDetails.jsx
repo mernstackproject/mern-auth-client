@@ -8,8 +8,10 @@ import Button from '../../Button/Button';
 import axios from 'axios';  
 import { BaseURL } from '../../Baseurl';
 import { toast } from "react-toastify";
+import useAuth from '../utils/useAuth';
 const BookingDetails = () => {
   const { id } = useParams();
+  useAuth()
   const [loading, setLoading] = useState(false);
   const [bookData, setBookData] = useState(null);
   const [disable, setDisable] = useState(false)

@@ -7,7 +7,6 @@ import Button from '../../Button/Button';
 import Image from '../../Image/Image';
 import useAuth from '../utils/useAuth';
 const Books = () => {
-  console.log(localStorage.getItem("auth"))
     useAuth()
   return (
     <>
