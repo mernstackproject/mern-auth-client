@@ -1,19 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../pages/Home/Home.css";
 import { useNavigate } from "react-router-dom";
 import FetchService from "../Auth/services/FetchService";
-import Image from "../Image/Image";
-
 const Navbar = () => {
   const { data: userData } = FetchService("/found-user");
   const isAuthenticated = localStorage.getItem("auth") !== null;
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("auth");
-    if(! localStorage.removeItem("auth") ||  localStorage.removeItem("auth") === undefined ||  localStorage.removeItem("auth") === null){
-      navigate("/login")
-    }
-    navigate("/login");
+    navigate("/login", {replace:true});
   };
     
   return (
@@ -31,7 +26,7 @@ const Navbar = () => {
         <div className="header-right">
           <div className="profile-container">
             <img
-              src={userData?.data?.userRecord?.image && userData?.data?.userRecord?.image}
+              src={ userData?.data?.userRecord?.image}
               alt="Profile"
               className="profile-image"
             />
@@ -42,7 +37,7 @@ const Navbar = () => {
               </button>
               <div className="dropdown-menu">
                  
-                  <button onClick={handleLogout} className="logout-button">
+                  <button style={{cursor:"pointer", margin:"10px"}} onClick={handleLogout} className="logout-button">
                  {isAuthenticated ? "Logout":"Login"}   
                   </button>
                 

@@ -13,9 +13,12 @@ const Register = () => {
   name:"",
   email:"",
   password:"",
+  mobile:"",
   nameError:"",
   emailError:"",
-  passwordError:""
+  passwordError:"",
+  mobileError:""
+
   });
   const [disable,setDisable] = useState(false)
   const handleRegister= async(e)=>{
@@ -98,6 +101,23 @@ const Register = () => {
               error={formData["passwordError"]}
             />
           </div>
+
+          <div className="input-group">
+          <label htmlFor="password" className="input-label">
+            Password
+          </label>
+          <Input
+            type="password"
+            id="password"
+            className="input-field"
+            placeholder="Enter your password"
+            autoComplete="on"
+            onChange={(e)=> handleChange(e,formData,setFormData)}
+            value={formData.mobile}
+            name="number"
+            error={formData["mobileError"]}
+          />
+        </div>
           <Button type="submit" className="register-btn" value={disable ? "...." : "Register"} />
         </form>
         <p className="register-footer">

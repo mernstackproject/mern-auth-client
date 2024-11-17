@@ -15,7 +15,14 @@ export const validateToken = async (token) => {
         return false;
       }
       const data = await response.json();
-      return data.data?.isValid !== undefined ? data.data.isValid : false;  
+      if (data?.data?.isValid === false) {
+        if (data?.data?.message === "Token has expired") {
+          return { isValid: false, expired: true };
+        }
+        return { isValid: false, expired: false };
+      }
+  
+      return { isValid: true, expired: false };  
     } catch (error) {
       return false;
     }

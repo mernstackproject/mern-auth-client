@@ -3,11 +3,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 export const register = async (rest) => {
-  const { email, password, name } = rest.formData;
+  const { email, password, name, mobileNumber } = rest.formData;
   try {
     const response = await axios.post(
       `${BaseURL}/register`,
-      { name, email, password },
+      { name, email, password, mobileNumber },
       {
         headers: {
           "Content-Type": "application/json",
@@ -58,5 +58,96 @@ export const googleAuth = async (res, navigate) => {
     }
   } catch (e) {
     console.log(e.response?.data?.message);
+  }
+};
+
+export const changePassword = async ({ currentPassword, newPassword }) => {
+  try {
+    const response = await axios.post(
+      `${BaseURL}/change-password`,
+      { currentPassword, newPassword },
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("auth")}`, // Ensure token is sent
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    toast.success(response.data.message);
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Error changing password");
+    return { error: error.response?.data?.message };
+  }
+};
+export const verifyOtp = async ({ email, otp }) => {
+  try {
+    const response = await axios.post(
+      `${BaseURL}/verify-otp`,
+      { email, otp },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Invalid OTP");
+    return { error: error.response?.data?.message };
+  }
+};
+export const resendOtp = async (email) => {
+  try {
+    const response = await axios.post(
+      `${BaseURL}/resend-otp`,
+      { email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    toast.success(response.data.message);
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Error resending OTP");
+    return { error: error.response?.data?.message };
+  }
+};
+export const resetPassword = async ({ email, otp, newPassword }) => {
+  try {
+    const response = await axios.post(
+      `${BaseURL}/reset-password`,
+      { email, otp, newPassword },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    toast.success(response.data.message);
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Error resetting password");
+    return { error: error.response?.data?.message };
+  }
+};
+export const forgotPassword = async (email) => {
+  try {
+    const response = await axios.post(
+      `${BaseURL}/forgot-password`,
+      { email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    toast.success(response.data.message);
+    return response.data;
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Error sending OTP");
+    return { error: error.response?.data?.message };
   }
 };

@@ -5,8 +5,7 @@ export const authContext = createContext(null);
 const AuthContext = ({ children }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
- 
+  const [error, setError] = useState(null); 
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -9,10 +9,16 @@ const useAuth = () => {
       if (!token) {
         navigate('/login', {replace:true});
       } else {
-        const isValid = await validateToken(token); 
-        if (!isValid) {
-          localStorage.removeItem('auth');  
-          navigate('/login', {replace:true});
+        const result = await validateToken(token); 
+        
+        if (!result.isValid) {
+         
+          if (result.expired) {
+            localStorage.removeItem('auth');
+            navigate('/login', { replace: true });
+          } else {
+            navigate('/login', { replace: true });
+          }
         }
       }
     };

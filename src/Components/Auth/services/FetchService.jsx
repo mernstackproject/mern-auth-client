@@ -1,8 +1,8 @@
+// FetchService.js
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BaseURL } from "../../Baseurl";
-
-const FetchService = (url) => {
+const useFetchService = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ const FetchService = (url) => {
       if (!token) {
         throw new Error("Authorization token is missing");
       }
-      const response = await axios.get(`${BaseURL}${url}`, { // Use the passed URL here
+      const response = await axios.get(`${BaseURL}${url}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -29,10 +29,10 @@ const FetchService = (url) => {
   };
 
   useEffect(() => {
-    fetchData(); 
-  }, [url]); 
+    fetchData();
+  }, [url]);
 
-  return { data, loading, error, refetch: fetchData }; // Return fetchData as a reference
+  return { data, loading, error, refetch: fetchData }; 
 };
 
-export default FetchService;
+export default useFetchService;
